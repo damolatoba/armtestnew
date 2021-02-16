@@ -13,8 +13,12 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'AzureRmPipeline-conn'
+    subscriptionId: '549cf74a-fcb0-49d2-8a63-968ea8b2b1f8'
     action: 'Create Or Update Resource Group'
+    resourceGroupName: 'Pipelinerg'
+    location: 'Central US'
     templateLocation: 'Linked artifact'
-    csmFile: 'armtestnew/linkedStorageAccount.json'
+    csmFile: 'armtestnew/azuredeploy.json'
     overrideParameters: '-projectName armpipe -linkedTemplateUri https://raw.githubusercontent.com/damolatoba/armtestnew/master/linkedStorageAccount.json'
     deploymentMode: 'Incremental'
