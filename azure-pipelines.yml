@@ -15,6 +15,6 @@ steps:
     deploymentScope: 'Resource Group'
     action: 'Create Or Update Resource Group'
     templateLocation: 'Linked artifact'
-    csmFile: 'armtestnew/azuredeploy.json'
+    csmFile: 'armtestnew/linkedStorageAccount.json'
     overrideParameters: '-projectName armpipe -linkedTemplateUri https://raw.githubusercontent.com/damolatoba/armtestnew/master/linkedStorageAccount.json'
     deploymentMode: 'Incremental'
